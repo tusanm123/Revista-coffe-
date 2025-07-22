@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Revista Café Aromas</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Roboto&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f1ed;
+      color: #3a2e2e;
+    }
+
+    header {
+      background-color: #4b2e1f;
+      padding: 20px;
+      color: white;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+    }
+
+    nav {
+      background-color: #6b3f2d;
+      overflow: hidden;
+    }
+
+    nav a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #8b5e3c;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+    }
+
+    .nav-toggle {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 26px;
+      padding: 14px 20px;
+      cursor: pointer;
+      display: block;
+    }
+
+    @media (min-width: 768px) {
+      .nav-toggle {
+        display: none;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+
+    .hero {
+      background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+      url('https://images.unsplash.com/photo-1509042239860-f550ce710b93');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 140px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      font-family: 'Playfair Display', serif;
+      margin: 0;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    ul {
+      line-height: 1.8;
+    }
+
+    footer {
+      background-color: #4b2e1f;
+      color: white;
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+    }
+
+    .social-icons img {
+      width: 30px;
+      margin: 0 10px;
+      vertical-align: middle;
+      transition: transform 0.3s;
+      filter: invert(1);
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.2);
+    }
+  </style>
+  <script>
+    function toggleMenu() {
+      const links = document.querySelector('.nav-links');
+      links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+    }
+  </script>
+</head>
+<body>
+
+<header>
+  <h1>Revista Café Aromas</h1>
+  <p>Descubre el arte, la cultura y la pasión por el café</p>
+</header>
+
+<nav>
+  <button class="nav-toggle" onclick="toggleMenu()">☰</button>
+  <div class="nav-links">
+    <a href="#inicio">Inicio</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#variedades">Variedades</a>
+    <a href="#recetas">Recetas</a>
+    <a href="#galeria">Galería</a>
+  </div>
+</nav>
+
+<section class="hero" id="inicio">
+  <h2>Explora el mundo del café</h2>
+  <p>Una experiencia sensorial desde el grano hasta tu taza</p>
+</section>
+
+<section id="nosotros">
+  <h2>Nuestra Historia</h2>
+  <p>Desde 2010, Café Aromas se ha dedicado a explorar las raíces del café en distintas regiones del mundo. Nos apasiona compartir historias, aromas y experiencias que conectan a las personas con la cultura cafetera auténtica.</p>
+</section>
+
+<section id="variedades">
+  <h2>Variedades de Café</h2>
+  <ul>
+    <li><strong>Arábica:</strong> Delicado, dulce y con notas florales.</li>
+    <li><strong>Robusta:</strong> Intenso, fuerte y con más cafeína.</li>
+    <li><strong>Geisha:</strong> Exclusivo, afrutado y floral.</li>
+    <li><strong>Catuaí:</strong> Balanceado, suave y de acidez media.</li>
+  </ul>
+</section>
+
+<section id="recetas">
+  <h2>Recetas y Métodos de Preparación</h2>
+  <p>Domina el arte de preparar café con métodos profesionales y caseros:</p>
+  <ul>
+    <li>☕ Prensa francesa: sabor intenso y cuerpo completo.</li>
+    <li>🌊 Método V60: limpio, aromático y preciso.</li>
+    <li>🌀 Aeropress: versátil, rápido y concentrado.</li>
+    <li>🔥 Espresso casero: el clásico del barista.</li>
+  </ul>
+</section>
+
+<section id="galeria">
+  <h2>Galería de Fotos</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772" alt="Taza de café elegante">
+    <img src="https://images.unsplash.com/photo-1523942839745-7848d6f3f73d" alt="Café en grano">
+    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085" alt="Café al amanecer">
+    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Barista preparando café">
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Revista Café Aromas · Todos los derechos reservados.</p>
+  <div class="social-icons" style="margin-top: 15px;">
+    <a href="https://www.facebook.com" target="_blank" title="Facebook">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/facebook.svg" alt="Facebook">
+    </a>
+    <a href="https://www.instagram.com" target="_blank" title="Instagram">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg" alt="Instagram">
+    </a>
+    <a href="https://wa.me/5210000000000" target="_blank" title="WhatsApp">
+      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg" alt="WhatsApp">
+    </a>
+  </div>
+</footer>
+
+</body>
+</html>
